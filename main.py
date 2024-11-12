@@ -1,3 +1,4 @@
+
 from fastapi import FastAPI, HTTPException
 from sqlalchemy import create_engine, Column, Integer, LargeBinary
 from sqlalchemy.ext.declarative import declarative_base
@@ -6,29 +7,7 @@ import io
 from PIL import Image
 from fastapi.responses import StreamingResponse
 
-DATABASE_URL = "postgresql://alby.:@localhost/postgres"
-
-# Set up SQLAlchemy engine and session
-engine = create_engine(DATABASE_URL)
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-Base = declarative_base()
-
-# Define Image model
-class ImageModel(Base):
-    __tablename__ = "images"
-    id = Column(Integer, primary_key=True, index=True)
-    image_data = Column(LargeBinary, nullable=False)  # Store as binary blob
-
-Base.metadata.create_all(bind=engine)
-from fastapi import FastAPI, HTTPException
-from sqlalchemy import create_engine, Column, Integer, LargeBinary
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
-import io
-from PIL import Image
-from fastapi.responses import StreamingResponse
-
-DATABASE_URL = "postgresql://alby.:@localhost/postgres"
+DATABASE_URL = "postgresql://alby.:*sapalb#@localhost/postgres"
 
 # Set up SQLAlchemy engine and session
 engine = create_engine(DATABASE_URL)
