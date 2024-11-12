@@ -7,7 +7,7 @@ import io
 from PIL import Image
 from fastapi.responses import StreamingResponse
 
-DATABASE_URL = "postgresql://alby.:*sapalb#@localhost/postgres"
+DATABASE_URL = "postgresql://alby.:@localhost/postgres"
 
 # Set up SQLAlchemy engine and session
 engine = create_engine(DATABASE_URL)
